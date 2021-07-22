@@ -4,8 +4,7 @@ import datetime
 import json
 
 today = datetime.datetime.today().strftime('%Y%m%d')
-
-outdir = os.environ['OUTDIR_BASE']
+from christies.settings import outdir
 # outdir = "."
 outdir = "%s/%s/" %(outdir,today)
 

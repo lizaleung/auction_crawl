@@ -45,14 +45,15 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'auction_crawl.middlewares.AuctionCrawlSpiderMiddleware': 543,
+#    'auction_crawl.middlewares.ChristiesSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'auction_crawl.middlewares.AuctionCrawlDownloaderMiddleware': 543,
-#}
+# DOWNLOADER_MIDDLEWARES = {
+#     'auction_crawl.middlewares.ProxyMiddleware': 100,
+#    # 'auction_crawl.middlewares.ChristiesDownloaderMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -62,9 +63,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'auction_crawl.pipelines.AuctionCrawlPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'auction_crawl.pipelines.ChristiesPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -86,3 +87,9 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+import datetime, os
+
+outdir = os.environ.get("OUTDIR_BASE",'./data')
+HTTPERROR_ALLOWED_CODES  =[404]
