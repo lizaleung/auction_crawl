@@ -45,14 +45,14 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'auction_crawl.middlewares.ChristiesSpiderMiddleware': 543,
+#    'auction_crawl.middlewares.AuctionCrawlSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
 #     'auction_crawl.middlewares.ProxyMiddleware': 100,
-#    # 'auction_crawl.middlewares.ChristiesDownloaderMiddleware': 543,
+#    # 'auction_crawl.middlewares.AuctionCrawlDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -64,7 +64,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'auction_crawl.pipelines.ChristiesPipeline': 300,
+   'auction_crawl.pipelines.AuctionCrawlPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

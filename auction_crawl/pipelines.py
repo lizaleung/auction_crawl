@@ -12,7 +12,7 @@ from auction_crawl.items import ChristiesAuctionItem, ChristiesLotItem
 from auction_crawl.settings import outdir
 
 
-class ChristiesPipeline:
+class AuctionCrawlPipeline:
     def __init__(self):
         self.base_dir = None
 
@@ -33,7 +33,8 @@ class ChristiesPipeline:
             os.makedirs(file_dir)
 
     def process_item(self, item, spider):
-        line = json.dumps(dict(item), indent=2, ensure_ascii=False) + "\n"
+        # line = json.dumps(dict(item), indent=2, ensure_ascii=False) + "\n"
+        line = json.dumps(dict(item), ensure_ascii=False) + "\n"
         if isinstance(item, ChristiesAuctionItem):
             dt = item["end_date"]
             year = dt.split("-")[0]
