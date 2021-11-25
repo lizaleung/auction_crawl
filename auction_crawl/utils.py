@@ -4,7 +4,7 @@ import datetime
 import json
 
 today = datetime.datetime.today().strftime('%Y%m%d')
-from christies.settings import outdir
+from auction_crawl.settings import outdir
 # outdir = "."
 outdir = "%s/%s/" %(outdir,today)
 

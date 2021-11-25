@@ -51,8 +51,8 @@ ROBOTSTXT_OBEY = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#     'auction_crawl.middlewares.ProxyMiddleware': 100,
-#    # 'auction_crawl.middlewares.AuctionCrawlDownloaderMiddleware': 543,
+#     # 'auction_crawl.middlewares.ProxyMiddleware': 100,
+#    'auction_crawl.middlewares.AuctionCrawlSpiderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -89,7 +89,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
-import datetime, os
+import os
 
-outdir = os.environ.get("OUTDIR_BASE",'./data')
-HTTPERROR_ALLOWED_CODES  =[404]
+outdir = os.environ.get("OUTDIR_BASE", './data')
+HTTPERROR_ALLOWED_CODES = [404]
+
+LOG_LEVEL = 'INFO'
