@@ -1,3 +1,3 @@
 #export SCRAPERAPI_TOKEN="" 
-#export OUTDIR_BASE="/Volumes/GoogleDrive/Shared drives/Auction/Auction_Data"
-export OUTDIR_BASE="./output"
+export OUTDIR_BASE="/Volumes/GoogleDrive/Shared drives/Auction/"
+#export OUTDIR_BASE="./output"
